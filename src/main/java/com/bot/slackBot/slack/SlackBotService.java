@@ -38,9 +38,7 @@ public class SlackBotService extends Bot {
 
     /**
      * Invoked when the bot receives a direct mention (@botname: message)
-     * or a direct message. NOTE: These two event types are added by jbot
-     * to make your task easier, Slack doesn't have any direct way to
-     * determine these type of events.
+     * or a direct message.
      *
      * @param session
      * @param event
@@ -52,8 +50,7 @@ public class SlackBotService extends Bot {
 
     /**
      * Invoked when bot receives an event of type message with text satisfying
-     * the pattern {@code ([a-z ]{2})(\d+)([a-z ]{2})}. For example,
-     * messages like "ab12xy" or "ab2bc" etc will invoke this method.
+     * the pattern {@code ([a-z ]{2})(\d+)([a-z ]{2})}.
      *
      * @param session
      * @param event
@@ -79,10 +76,6 @@ public class SlackBotService extends Bot {
 
     /**
      * Invoked when bot receives an event of type file shared.
-     * NOTE: You can't reply to this event as slack doesn't send
-     * a channel id for this event type. You can learn more about
-     * <a href="https://api.slack.com/events/file_shared">file_shared</a>
-     * event from Slack's Api documentation.
      *
      * @param session
      * @param event
@@ -94,10 +87,9 @@ public class SlackBotService extends Bot {
 
 
     /**
-     * Conversation feature of JBot. This method is the starting point of the conversation (as it
-     * calls {@link Bot#startConversation(Event, String)} within it. You can chain methods which will be invoked
-     * one after the other leading to a conversation. You can chain methods with {@link Controller#next()} by
-     * specifying the method name to chain with.
+     * This method is the starting point of the conversation (as it
+     * calls {@link Bot#startConversation(Event, String)} within it.
+     * Methods are chained with {@link Controller#next()} by specifying the method name to chain with.
      *
      * @param session
      * @param event
